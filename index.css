@@ -1,75 +1,88 @@
+/* Ensure all elements have a consistent box-sizing model */
 * {
     box-sizing: border-box;
 }    
 
+/* Global body styles */
 body {
-    margin: 0;
-    background: no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    text-shadow: 0px 0px 20px #242424;
+    margin: 0; /* Remove default margin */
+    background: no-repeat center center fixed; /* Center background image and keep it fixed */
+    -webkit-background-size: cover; /* Set background to cover the entire viewport for Webkit browsers */
+    -moz-background-size: cover;    /* Set background to cover for Firefox */
+    -o-background-size: cover;      /* Set background to cover for Opera */
+    background-size: cover;         /* Ensure background image covers entire viewport */
+    color: white;                   /* Set text color to white */
+    font-family: Arial, Helvetica, sans-serif; /* Use a clean, sans-serif font */
+    text-shadow: 0px 0px 20px #242424; /* Add shadow around text for better contrast on light backgrounds */
 }
 
+/* Main container that takes full height of the viewport */
 main {
-    padding: 15px;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    padding: 15px; /* Add padding inside main container */
+    height: 100vh; /* Set main container height to full viewport height */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack children vertically */
+    justify-content: space-between; /* Space out children elements evenly */
 }
 
+/* Flexbox container for top elements (time, crypto, weather) */
 div.top {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Push elements to opposite ends */
 }
 
+/* Styling for the clock time */
 h1.time {
-    text-align: center;
+    text-align: center; /* Center the time text horizontally */
 }
 
+/* Crypto container with increased font size */
 div#crypto {
-    font-size: 1.3rem;
+    font-size: 1.3rem; /* Slightly increase the font size */
 }
 
+/* Remove default margin for individual crypto data items */
 div#crypto > p {
     margin: 0;
 }
 
+/* Flex container for the crypto top section (logo + name) */
 div#crypto-top {
     display: flex;
-    align-items: center;
-    margin-bottom: 5px;
+    align-items: center; /* Vertically center content */
+    margin-bottom: 5px; /* Add some space below */
 }
 
+/* Add margin between crypto logo and name */
 div#crypto-top > span {
     margin-left: 10px;
 }
 
+/* Weather container with flexbox for layout and alignment */
 div#weather {
     display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    align-self: flex-start;
+    align-items: center; /* Vertically center weather icon and temperature */
+    flex-wrap: wrap; /* Wrap elements if they overflow */
+    justify-content: flex-end; /* Push elements to the right */
+    align-self: flex-start; /* Align to start of parent container */
 }
 
+/* Weather icon size */
 div#weather > img {
-    width: 70px;
+    width: 70px; /* Set fixed width for weather icon */
 }
 
+/* Styling for the weather city name */
 p.weather-city {
-    width: 100%;
-    text-align: right;
+    width: 100%; /* Ensure city name takes full width */
+    text-align: right; /* Right-align city name */
     margin: 0;
-    margin-top: -10px;
+    margin-top: -10px; /* Slight overlap to pull city name closer to temperature */
 }
 
+/* Styling for the weather temperature */
 p.weather-temp {
     margin: 0;
-    font-size: 1.7rem;
-    margin-left: -10px;
+    font-size: 1.7rem; /* Increase font size for temperature */
+    margin-left: -10px; /* Adjust positioning to pull temperature closer to the icon */
 }
